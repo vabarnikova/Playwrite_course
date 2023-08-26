@@ -43,7 +43,8 @@ public class PlaywrightRunner {
         browserContext = browser.newContext(new Browser.NewContextOptions()
                 .setPermissions(Arrays.asList("geolocation"))
                 .setRecordVideoDir(Paths.get("videos/"))
-        );
+                .setRecordVideoSize(1920, 1680));
+
         browserContext.setDefaultTimeout(100000);
         browserContext.tracing().start(new Tracing.StartOptions()
                 .setScreenshots(true)

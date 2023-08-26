@@ -7,12 +7,19 @@
     <groupId>org.example</groupId>
     <artifactId>Playwrite</artifactId>
     <version>1.0-SNAPSHOT</version>
-
+<!--playwrite inspector
+    PWDEBUG=1 PLAYWRIGHT_JAVA_SRC=<java source dirs> mvn test
+    PWDEBUG environment variable to run your Playwright tests in debug mode.
+    PWDEBUG=1  inspector open when test running
+    PWDEBUG=0 inspector opens on the step with page.pause();
+    PWDEBUG=console a playwright object is available in the Developer tools console
+    PLAYWRIGHT_JAVA_SRC=../src/main/java:../src/test/java (full path)
+     -->
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven-surfire-version>3.1.0</maven-surfire-version>
+        <maven-surfire-version>3.0.0-M5</maven-surfire-version>
         <maven-compiler-version>3.11.0</maven-compiler-version>
     </properties>
 
@@ -39,18 +46,18 @@
                     <configuration>
                         <properties>
                             <configurationParameters>
-                                //parallel execution
-                        <!--        junit.jupiter.execution.parallel.enabled = true
-                                junit.jupiter.execution.parallel.mode.default = same_thread
-                                junit.jupiter.execution.parallel.mode.classes.default = concurrent
-                                junit.jupiter.execution.parallel.config.strategy = dynamic
-                                junit.jupiter.execution.parallel.config.dynamic.factor = 0.5-->
+                                <!--parallel execution-->
+                                <!--    junit.jupiter.execution.parallel.enabled = true
+                                        junit.jupiter.execution.parallel.mode.default = same_thread
+                                        junit.jupiter.execution.parallel.mode.classes.default = concurrent
+                                        junit.jupiter.execution.parallel.config.strategy = dynamic
+                                        junit.jupiter.execution.parallel.config.dynamic.factor = 0.5-->
                             </configurationParameters>
                         </properties>
                     </configuration>
                 </plugin>
                 <plugin>
-                    <groupId>org.apache.maven.plugins </groupId>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-version}</version>
                     <configuration>
